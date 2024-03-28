@@ -26,15 +26,18 @@ https://github.com/Camilacauzzo/tpVD.git
             
         </div>
 
-        {#each magnitudes as m}
-            <div class="col-wrap">
-                <div class = 'column' style='height: {m*2}px' class:show-mask={selectedImage === m}></div>
-                <img class = 'mask' src="./images/tipo.png" alt="" >
-            </div>
-            
-        {/each}
+       
 </div>    
 
+<div class="col-container">
+    {#each magnitudes as m, i}
+    <div class="col-wrap" class:show-mask={selectedImage === i}>
+        <div class = 'column' style='height: {m*2}px' ></div>
+        <img class = 'mask' src="./images/tipo.png" alt="" >
+    </div>
+
+{/each}
+</div>
 
 
 <!-- Estilos CSS -->
@@ -64,7 +67,7 @@ https://github.com/Camilacauzzo/tpVD.git
         background-color: blue;
         /*background-image: './images/agua.jpg';*/
         width: 100px;
-        display: none;
+        /* display: none; */
         
     }
     .mask{
@@ -82,6 +85,7 @@ https://github.com/Camilacauzzo/tpVD.git
         position: relative;
         width: 100px;
         margin: 10px;
+        display: none;
     }
 
 
